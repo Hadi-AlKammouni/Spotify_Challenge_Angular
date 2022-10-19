@@ -1,8 +1,8 @@
 <div class="search-container">
     <div class='search-row'>
-        <form>
+        <form #artistForm="ngForm" (ngSubmit)="searchForArtist(artistForm)">
             <div class="form-input">
-                <input type="text" placeholder="Search for an artist..">
+                <input type="text" placeholder="Search for an artist.." ngModel name="artist">
                 <span class="icon"><fa-icon [icon]="search_icon"></fa-icon></span>
             </div>
         </form>
