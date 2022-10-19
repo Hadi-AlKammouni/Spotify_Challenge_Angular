@@ -1,1 +1,18 @@
-<p>albums works!</p>
+<h1 class="title">{{artist_name}}'s Albums</h1>
+
+<div class="albums-body">
+    <div class="albums-container">
+        <div class="albums-row">
+            <div class="album" *ngFor="let album of albums">
+                <img class="img" src={{album.images[1]?.url}} alt="album"/>
+                <h2>{{album.name}}</h2>
+                <span *ngFor="let artist of albums.artists">
+                    <h4>{{artist.name}}</h4>
+                </span>
+                <p>{{album.release_date}}</p>
+                <p>{{album.total_tracks}} tracks</p>
+                <a class="preview" href={{album.external_urls.spotify}}>Preview on Spotify</a>
+            </div>
+        </div>
+    </div>
+</div>

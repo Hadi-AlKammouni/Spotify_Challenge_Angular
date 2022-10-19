@@ -15,7 +15,7 @@ export class ArtistSearchComponent implements OnInit {
   search_icon = faMagnifyingGlass
   artist?: string
   access_token?: any
-  error = '';
+  error = ''
   artists?: any
   isArtist = false
 

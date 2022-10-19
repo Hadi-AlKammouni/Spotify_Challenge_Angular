@@ -12,6 +12,7 @@ export class AlbumsComponent implements OnInit {
   artist_name?: string | null
   token?: string | null
   error = ''
+  albums?: any
 
   constructor( private getAlbums: AlbumsService) { }
 
@@ -22,8 +23,14 @@ export class AlbumsComponent implements OnInit {
     console.log(this.album_id)
     console.log(this.artist_name)
     console.log(this.token)
-    this.getAlbums.getAlbums(this.album_id, this.token)
+
+    this.getArtistAlbums(this.album_id, this.token)
+  }
+
+  private getArtistAlbums (album_id: string | null, token: string | null) {
+    this.getAlbums.getAlbums(album_id, token)
       .subscribe(response => {
+        this.albums = response.items
         console.log(response)
       }, errorMessage => {
         this.error = errorMessage
