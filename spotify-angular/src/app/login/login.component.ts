@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   length: number = 16
 
   ngOnInit(): void {
+    localStorage.clear()
   }
     
   login() {
