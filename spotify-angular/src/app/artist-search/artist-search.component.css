@@ -48,3 +48,57 @@ input:focus {
     align-items: center;
     margin: 20px;
 }
+
+.cards-body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fefefe;
+    line-height: 1.5;
+}
+
+.cards-container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.cards-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-around
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 20px;
+    padding: 20px 20px;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    align-self: normal;
+    cursor: pointer;
+    border-radius: 15px;
+    width: 280px;
+    height: 320px;
+}
+
+.card:hover {
+    transform: scale(1.2);
+    transition: all .5s;
+    box-shadow: 0 0 20px #32e17c;
+}
+
+.card:active {
+    transform: scale(0.9);
+}
+
+.img {
+    max-width: 260px;
+    max-height: 220px;
+    border-radius: 15px;
+}
