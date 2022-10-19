@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-artist-search',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArtistSearchComponent implements OnInit {
 
+  search_icon = faMagnifyingGlass
+  
   constructor() { }
 
   ngOnInit(): void {
