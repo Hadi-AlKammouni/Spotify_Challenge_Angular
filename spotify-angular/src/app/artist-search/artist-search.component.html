@@ -24,7 +24,7 @@
     <div class="cards-container">
         <div class="cards-row">
             <div class="card" *ngFor="let artist of artists">
-                <span>
+                <span (click)="viewAlbum(artist.id, artist.name)">
                     <img class="img" src="{{artist?.images[1]?.url}}" alt="artist"/>
                     <h4>{{artist.name}}</h4>
                     <p>{{artist.followers.total}} followers</p>

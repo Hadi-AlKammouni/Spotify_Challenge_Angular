@@ -8,12 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ArtistSearchComponent } from './artist-search/artist-search.component';
+import { AlbumsComponent } from './albums/albums.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ArtistSearchComponent
+    ArtistSearchComponent,
+    AlbumsComponent
   ],
   imports: [
     BrowserModule,
