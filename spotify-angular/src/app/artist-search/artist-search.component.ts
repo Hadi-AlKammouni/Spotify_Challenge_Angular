@@ -18,6 +18,7 @@ export class ArtistSearchComponent implements OnInit {
   error = ''
   artists?: any
   isArtist = false
+  last_search?: string | null
 
   constructor( private artistSearch: ArtistSearchService, private router: Router ) { }
 
@@ -27,10 +28,20 @@ export class ArtistSearchComponent implements OnInit {
       this.access_token = object.access_token
       localStorage.setItem("token", this.access_token)
     }
+    
+    this.last_search = localStorage.getItem("last-search")
+    if(this.last_search) {
+      this.getArtist(this.last_search)
+    }
   }
 
   searchForArtist(form: NgForm) {
     const artist = form.value.artist
+    localStorage.setItem("last-search", artist)
+    this.getArtist(artist)
+  }
+
+  private getArtist(artist: any) {
     this.artistSearch.findArtist(artist, this.access_token)
       .subscribe(response => {
         this.artists = response.artists.items

@@ -20,9 +20,6 @@ export class AlbumsComponent implements OnInit {
     this.album_id = localStorage.getItem("album-id")
     this.artist_name = localStorage.getItem("artist-name")
     this.token = localStorage.getItem("token")
-    console.log(this.album_id)
-    console.log(this.artist_name)
-    console.log(this.token)
 
     this.getArtistAlbums(this.album_id, this.token)
   }
@@ -31,7 +28,6 @@ export class AlbumsComponent implements OnInit {
     this.getAlbums.getAlbums(album_id, token)
       .subscribe(response => {
         this.albums = response.items
-        console.log(response)
       }, errorMessage => {
         this.error = errorMessage
       })
