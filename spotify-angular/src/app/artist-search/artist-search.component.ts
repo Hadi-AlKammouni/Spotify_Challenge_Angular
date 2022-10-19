@@ -25,6 +25,7 @@ export class ArtistSearchComponent implements OnInit {
     if(window.location.hash) {
       const object = this.getReturnedParams(window.location.hash)
       this.access_token = object.access_token
+      localStorage.setItem("token", this.access_token)
     }
   }
 

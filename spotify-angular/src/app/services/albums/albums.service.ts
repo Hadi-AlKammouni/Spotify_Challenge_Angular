@@ -2,17 +2,17 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
 
-import { ArtistSearch } from 'src/app/models/artist-search.model';
+import { Albums } from 'src/app/models/artist-albums.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ArtistSearchService {
+export class AlbumsService {
 
   constructor( private http: HttpClient ) { }
 
-  findArtist(artist: string, token: any): Observable<ArtistSearch> {
-    return this.http.get<ArtistSearch>(`https://api.spotify.com/v1/search?q=artist%3A${artist}&type=artist`, {
+  getAlbums(id: string | null, token: any | null): Observable<Albums> {
+    return this.http.get<Albums>(`https://api.spotify.com/v1/artists/${id}/albums`, {
       headers: new HttpHeaders()
         .set("Content-Type", "application/json")
         .set("Authorization", `Bearer ${token}`)
