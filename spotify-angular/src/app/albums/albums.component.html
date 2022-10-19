@@ -6,7 +6,7 @@
             <div class="album" *ngFor="let album of albums">
                 <img class="img" src={{album.images[1]?.url}} alt="album"/>
                 <h2>{{album.name}}</h2>
-                <span *ngFor="let artist of albums.artists">
+                <span *ngFor="let artist of album.artists">
                     <h4>{{artist.name}}</h4>
                 </span>
                 <p>{{album.release_date}}</p>
