@@ -1,4 +1,4 @@
-export interface Welcome9 {
+export interface ArtistSearch {
     artists: Artists;
     tracks:  Tracks;
 }
