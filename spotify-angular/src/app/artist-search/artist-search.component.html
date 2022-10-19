@@ -1,4 +1,4 @@
-<div class="search-container">
+<div class="search-container" *ngIf="!isArtist">
     <div class='search-row'>
         <form #artistForm="ngForm" (ngSubmit)="searchForArtist(artistForm)">
             <div class="form-input">
@@ -6,5 +6,29 @@
                 <span class="icon"><fa-icon [icon]="search_icon"></fa-icon></span>
             </div>
         </form>
+    </div>
+</div>
+
+
+<div class="search-container-with-artists" *ngIf="isArtist">
+    <div class='search-row'>
+        <form #artistForm="ngForm" (ngSubmit)="searchForArtist(artistForm)">
+            <div class="form-input">
+                <input type="text" placeholder="Search for an artist.." ngModel name="artist">
+                <span class="icon"><fa-icon [icon]="search_icon"></fa-icon></span>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="cards-body" *ngIf="isArtist">
+    <div class="cards-container">
+        <div class="cards-row" *ngFor="let artist of artists">
+            <div class="card">
+                <img class="img" src={{artist?.images[1]?.url}} alt="artist"/>
+                <h4>{{artist.name}}</h4>
+                <p>{{artist.followers.total}} followers</p>
+            </div>
+        </div>
     </div>
 </div>

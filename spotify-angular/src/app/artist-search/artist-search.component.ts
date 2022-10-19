@@ -16,6 +16,7 @@ export class ArtistSearchComponent implements OnInit {
   access_token?: any
   error = '';
   artists?: any
+  isArtist = false
 
   constructor( private artistSearch: ArtistSearchService ) { }
 
@@ -31,7 +32,7 @@ export class ArtistSearchComponent implements OnInit {
     this.artistSearch.findArtist(artist, this.access_token)
       .subscribe(response => {
         this.artists = response.artists.items
-        console.log(this.artists)
+        this.isArtist = true
       }, errorMessage => {
         this.error = errorMessage
     })

@@ -41,3 +41,10 @@ input:focus {
     font-size: 20px;
     color: #08a84b;
 }
+
+.search-container-with-artists {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
